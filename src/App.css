@@ -1,6 +1,91 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #f0f2f5;
+}
+
 .App {
   text-align: center;
+  width: 100%;
   max-width: 600px;
   margin: 0 auto;
   padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  color: #333;
+  margin-bottom: 30px;
+}
+
+input {
+  padding: 10px;
+  margin-right: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 300px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 5px;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+  max-width: 500px;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin: 5px 0;
+  background-color: #f9f9f9;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+li button {
+  background-color: #ff4444;
+}
+
+li button:hover {
+  background-color: #cc0000;
+}
+
+li.completed span {
+  text-decoration: line-through;
+  color: #888;
+}
+
+li div {
+  display: flex;
+  gap: 5px;
+}
+
+li button:first-of-type {
+  background-color: #4CAF50;
+}
+
+li.completed button:first-of-type {
+  background-color: #2196F3;
 }
