@@ -83,20 +83,43 @@ function App() {
         value={input}
         onChange={(e) => setInput(e.target.value)}
         placeholder='Добавить задачу'
+        className="task-input"
       />
-      <button onClick={addTask}>Добавить</button>
-      <button onClick={clearTasks}>Очистить всё</button>
-      <ul>
+      <div className="div-button">
+        <button onClick={addTask} className="add-button">Добавить</button>
+        <button onClick={clearTasks} className="filters-button">Очистить всё</button>
+      </div>
+      <ul className="ul">
         {tasks.map((task) => (
+          // <li key={task.id} className={task.completed ? 'completed' : ''}>
+          //   <span onClick={() => toggleTask(task.id)}>
+          //     {task.text}
+          //   </span>
+          //   <div className="task-buttons">
+          //     <button onClick={() => toggleTask(task.id)}>
+          //       {task.completed ? 'Возвратить' : 'Завершить'}
+          //     </button>
+          //     <button className="delete-button" onClick={() => deleteTask(task.id)}>Удалить</button>
+          //   </div>
+          // </li>
           <li key={task.id} className={task.completed ? 'completed' : ''}>
-            <span onClick={() => toggleTask(task.id)} style={{ cursor: 'pointer' }}>
-              {task.text}
-            </span>
-            <div>
-              <button onClick={() => toggleTask(task.id)}>
-                {task.completed ? 'Возвратить' : 'Завершить'}
-              </button>
-              <button onClick={() => deleteTask(task.id)}>Удалить</button>
+            <div className="task-content">
+                <input
+                  type="checkbox"
+                  className="task-checkbox"
+                  checked={task.completed}
+                  onChange={() => toggleTask(task.id)}
+                />
+                <span className="task-text">{task.text}</span>
+              </div>
+            <div className="task-buttons">
+              <button
+                  className={task.completed ? 'toggle-button-return' : 'toggle-button'}
+                  onClick={() => toggleTask(task.id)}
+                >
+                  {task.completed ? 'Возвратить' : 'Завершить'}
+                </button>
+                <button className="delete-button" onClick={() => deleteTask(task.id)}>Удалить</button>
             </div>
           </li>
         ))}
