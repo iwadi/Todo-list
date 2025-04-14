@@ -91,17 +91,6 @@ function App() {
       </div>
       <ul className="ul">
         {tasks.map((task) => (
-          // <li key={task.id} className={task.completed ? 'completed' : ''}>
-          //   <span onClick={() => toggleTask(task.id)}>
-          //     {task.text}
-          //   </span>
-          //   <div className="task-buttons">
-          //     <button onClick={() => toggleTask(task.id)}>
-          //       {task.completed ? 'Возвратить' : 'Завершить'}
-          //     </button>
-          //     <button className="delete-button" onClick={() => deleteTask(task.id)}>Удалить</button>
-          //   </div>
-          // </li>
           <li key={task.id} className={task.completed ? 'completed' : ''}>
             <div className="task-content">
                 <input
