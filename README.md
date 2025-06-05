@@ -1,9 +1,5 @@
 # Todo-list
 
 To run this project, you need to either download it to your desktop or do it via git. In the code editor console, write:
-
-npm install
-
-After this write:
-
-npm run dev
+1.npm install
+2.npm run dev
